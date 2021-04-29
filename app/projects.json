@@ -1,0 +1,49 @@
+{
+    "projects": [
+        {
+            "id": 0,
+            "project_name": "Random Quote Generator",
+            "description": "We were asked to create an app that displays random famous quotes each time a button is clicked. We selected quotes from famous historical figures, artists, scientists, celebrities, etc. I have included 10 of my favorite quotes.",
+            "technologies": ["CSS", "HTML", "JavaScript"],
+            "live_link": " https://pamelachristina.github.io/RandomGeneratorAPI/",
+            "github_link": "https://github.com/Pamelachristina/RandomGeneratorAPI",
+            "image_urls": "/static/images/random_quote.png"
+        },
+        {
+            "id": 1,
+            "project_name": "Data Pagination and Filtering",
+            "description": "In this project, we used a common web development technique known as “pagination” to enhance the usability of a web page.",
+            "technologies": ["CSS", "HTML", "JavaScript"],
+            "live_link": " https://pamelachristina.github.io/dataPaginationFiltering/",
+            "github_link": "https://github.com/Pamelachristina/dataPaginationFiltering",
+            "image_urls": "/static/images/student_cards.png"
+        },
+        {
+            "id": 2,
+            "project_name": "Interactive Form",
+            "description": "In this project, we used JavaScript to enhance an interactive registration form for a fictional Full Stack conference.",
+            "technologies": ["CSS", "HTML", "JavaScript"],
+            "live_link": " https://pamelachristina.github.io/interactive-form/",
+            "github_link": "https://github.com/Pamelachristina/interactive-form",
+            "image_urls": "/static/images/full_stack_form.png"
+        },
+        {
+            "id": 3,
+            "project_name": "OOP Game Show App",
+            "description": "A browser-based, word guessing game created with JavaScript and Object-Oriented Programing.",
+            "technologies": ["CSS", "HTML", "JavaScript"],
+            "live_link": "https://pamelachristina.github.io/GameShowApp/",
+            "github_link": "https://github.com/Pamelachristina/GameShowApp",
+            "image_urls": ["/static/images/phrase_hunter1.png", "/static/images/phrase_hunter2.png", "/static/images/phrase_hunter3.png"]
+        },
+        {
+            "id": 4,
+            "project_name": "Public API Requests",
+            "description": "Using the Random User Generator API this app grabs information for 12 random users, displays the data on a main page, and opens a modal window with more detailed information.",
+            "technologies": ["CSS", "HTML", "JavaScript"],
+            "live_link": " https://pamelachristina.github.io/RandomGeneratorAPI/",
+            "github_link": "https://github.com/Pamelachristina/RandomGeneratorAPI",
+            "image_urls": ["/static/images/employee_directory.png", "/static/images/employee_directory_modal.png"]
+        }
+    ]
+}
