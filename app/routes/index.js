@@ -1,10 +1,11 @@
-
+"use strict";
 
 const express = require('express');
 const router = express.Router();
 
 //Import `data.JSON` file
 const { projects }  = require('../data/data.json');
+const projects = data.projects; 
 
 
 /* GET home page. */
@@ -21,14 +22,18 @@ router.get('/about', function(req, res, next) {
 
 /* GET projects page. */
 router.get('/projects/:id', function(req, res, next) {
+    //res.render('project', { project });
     const projectId = req.params.id;
-    const project = projects.find( ({ id }) => project.id === +projectId );
+    const project = projects.find( project => project.id === +projectId );
     
     if (project) {
       res.render('project', { project });
     } else {
-      res.sendStatus(404);
-    }
+      const err = new Error();
+      err.status = 404;
+      err.message = 'Oh Noes! The milk has gone bad. Sorry this page does not exist.';
+      next(err);
+    } 
   });
 
 

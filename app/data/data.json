@@ -5,8 +5,8 @@
             "project_name": "Random Quote Generator",
             "description": "We were asked to create an app that displays random famous quotes each time a button is clicked. We selected quotes from famous historical figures, artists, scientists, celebrities, etc. I have included 10 of my favorite quotes.",
             "technologies": ["CSS", "HTML", "JavaScript"],
-            "live_link": " https://pamelachristina.github.io/RandomGeneratorAPI/",
-            "github_link": "https://github.com/Pamelachristina/RandomGeneratorAPI",
+            "live_link": " https://pamelachristina.github.io/RandomQuoteGen/",
+            "github_link": ":https://github.com/Pamelachristina/RandomQuoteGen",
             "image_urls": "/static/images/random_quote.png"
         },
         {
