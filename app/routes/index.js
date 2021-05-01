@@ -5,7 +5,7 @@ const router = express.Router();
 
 //Import `data.JSON` file
 const { projects }  = require('../data/data.json');
-const projects = data.projects; 
+
 
 
 /* GET home page. */
