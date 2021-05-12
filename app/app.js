@@ -30,6 +30,7 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 
 // catch 404 and forward to error handler
  app.use(function(req, res, next) {
+  console.log("Oh Noes! The milk has gone bad. Sorry this page does not exist.");
   next(createError(404));
   
 }); 
