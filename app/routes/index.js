@@ -34,7 +34,19 @@ router.get('/projects/:id', function(req, res, next) {
       err.message = 'Oh Noes! The milk has gone bad. Sorry this page does not exist.';
       next(err);
     } 
+
   });
+
+  router.get('/error', function(req, res, next)  {
+    console.log('Oh Noes! The milk has gone bad. Sorry this page does not exist.');
+  
+    const err = new Error();
+    err.message = 'Oh Noes! The milk has gone bad. Sorry this page does not exist.'
+    err.status = 404;
+
+    res.status(404);
+    next(err);
+});
 
 
   
