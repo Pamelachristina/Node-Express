@@ -1,52 +1,52 @@
-"use strict";
+// "use strict";
 
-const express = require('express');
-const router = express.Router();
+// const express = require('express');
+// const router = express.Router();
 
-//Import `data.JSON` file
-const { projects }  = require('../data/data.json');
-
-
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { projects });
-});
+// //Import `data.JSON` file
+// const { projects }  = require('../data/data.json');
 
 
-/* GET about page. */
-router.get('/about', function(req, res, next) {
-    res.render('about');
-  });
+
+// /* GET home page. */
+// router.get('/', function(req, res, next) {
+//   res.render('index', { projects });
+// });
 
 
-/* GET projects page. */
-router.get('/projects/:id', function(req, res, next) {
-    //res.render('project', { project });
-    const projectId = req.params.id;
-    const project = projects.find( project => project.id === +projectId );
+// /* GET about page. */
+// router.get('/about', function(req, res, next) {
+//     res.render('about');
+//   });
+
+
+// /* GET projects page. */
+// router.get('/projects/:id', function(req, res, next) {
+//     //res.render('project', { project });
+//     const projectId = req.params.id;
+//     const project = projects.find( project => project.id === +projectId );
     
-    if (project) {
-      res.render('project', { project });
-    } else {
-      const err = new Error();
-      err.status = 404;
-      err.message = 'Oh Noes! The milk has gone bad. Sorry this page does not exist.';
-      next(err);
-    } 
+//     if (project) {
+//       res.render('project', { project });
+//     } else {
+//       const err = new Error();
+//       err.status = 404;
+//       err.message = 'Oh Noes! The milk has gone bad. Sorry this page does not exist.';
+//       //console.log(err.message);
+//       next(err);
+//     } 
 
-  });
+//   });
 
-  router.get('/error', function(req, res, next)  {
-    console.log('Oh Noes! The milk has gone bad. Sorry this page does not exist.');
+//   router.get('/error', function(req, res, next)  {
   
-    const err = new Error();
-    err.message = 'Oh Noes! The milk has gone bad. Sorry this page does not exist.'
-    err.status = 404;
+//     const err = new Error();
+//     err.message = 'Oh Noes! The milk has gone bad. Sorry this page does not exist.'
+//     err.status = 404;
 
-    res.status(404);
-    next(err);
-});
+//     res.status(404);
+//     next(err);
+// });
 
 
   
@@ -54,4 +54,4 @@ router.get('/projects/:id', function(req, res, next) {
 
 
 
-module.exports = router;
+// module.exports = router;

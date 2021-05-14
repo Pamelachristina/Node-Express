@@ -8,11 +8,11 @@ const logger = require('morgan');
 const debug = require('debug')('app:server');
 const http = require('http');
 
-const indexRouter = require('./routes/index');
+//const indexRouter = require('./routes/index');
 const app = express();
 
 
-app.use('/', indexRouter);
+//app.use('/', indexRouter);
 
 
 // view engine setup
@@ -27,28 +27,87 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 
 
 
+//Import `data.JSON` file
+ //const data  = require('./data.json').data;
+ //const projects = data.projects;
+ const { projects }  = require('./data.json');
+
+
+/* GET home page. */
+app.get('/', function(req, res, next) {
+  res.render('index', { projects });
+});
+
+
+/* GET about page. */
+app.get('/about', function(req, res, next) {
+    res.render('about');
+  });
+
+
+/* GET projects page. */
+app.get('/projects/:id', function(req, res, next) {
+    //res.render('project', { project });
+    const projectId = req.params.id;
+    const project = projects.find( project => project.id === +projectId );
+    
+    if (project) {
+      res.render('project', { project });
+    } else {
+      const err = new Error();
+      err.status = 404;
+      //console.log(err.message);
+      next(err);
+    } 
+
+  });
+
+  app.get('/error', function(req, res, next)  {
+  
+    const err = new Error();
+    err.message = 'Oh Noes! The milk has gone bad. Sorry this page does not exist.'
+    err.status = 500;
+
+    res.status(500);
+    next(err);
+});
+
+
 
 // catch 404 and forward to error handler
  app.use(function(req, res, next) {
-  console.log("Oh Noes! The milk has gone bad. Sorry this page does not exist.");
-  next(createError(404));
+console.log('404 error handler called')
+const err = new Error();
+err.status = 404;
+next(err);
   
 }); 
 
 
 
-// error handler
+// global error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  //res.locals.message = err.message;
+  //res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error', {message:"Oh Noes! The milk has gone bad. Sorry this page does not exist."});
+  if(err.status === 404 ){
+    err.message = 'Oh Noes! The milk has gone bad. Sorry this page does not exist.';
+    console.log(err.message);
+    res.status(err.status);
+    return res.render('error', { err });
+
+  } else {
+    err.message = 'Sorry this page does not exist.';
+    console.log(err.message);
+    return res.status(err.status || 500).render('error', { err });
+  }
  
   
 });
+
+
+
 
 
 
